@@ -1,13 +1,40 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>AngularDashboard</title>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-</head>
-<body>
-  <app-root></app-root>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <title>AngularDashboard</title>
+    <base href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <!-- TAILWIND CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- TAILWIND PERSONALIZED -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#9DB2BF",
+              secondary: {
+                100: "#e0dedf",
+                200: "#f7f5f6", //gris claro
+                300: "#FF355E", //rosa fosfi
+                400: "#CA7284", //rosa claro
+                600: "#363C55", //azul oscuro
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <!-- TAILWIND CSS STYLE -->
+    <style type="text/tailwindcss">
+      @layer utilities {
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="text-3xl text-secondary-300 underline">Hello world!</h1>
+    <!-- <app-root></app-root> -->
+  </body>
 </html>
