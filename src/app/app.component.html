@@ -1,5 +1,9 @@
-<div [class.dark]="isDark">
-  <app-navbar></app-navbar>
+<div class="flex h-screen w-full overflow-hidden" [class.dark]="isDarkMode">
   <app-sidebar></app-sidebar>
-  <router-outlet></router-outlet>
+  <div class="flex grow flex-col content-start bg-gray-100 dark:bg-slate-900">
+    <app-navbar></app-navbar>
+    <div class="grow overflow-auto">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
 </div>

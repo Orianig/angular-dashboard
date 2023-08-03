@@ -8,7 +8,7 @@ import { ThemeService } from './core/services/theme.service';
 })
 export class AppComponent {
   title = 'angular-dashboard';
-  public isDark = false;
+  public isDarkMode = false;
 
   constructor(private themeService: ThemeService) {
     this.getThemeMode();
@@ -16,7 +16,7 @@ export class AppComponent {
 
   private getThemeMode() {
     this.themeService.themeChanged.subscribe((theme) => {
-      this.isDark = theme == 'dark' ? true : false;
+      this.isDarkMode = theme == 'dark' ? true : false;
     });
   }
 }
