@@ -1,1 +1,31 @@
-<button (click)="toggleTheme()">Tema</button>
+
+<div class="flex h-full relative bg-gray-100 dark:bg-night-800">
+    <div class="bg-gray-900 text-white p-4 z-10">
+      <div class="icon" (click)="toggleSubmenu('dashboard')">
+        <i class="text-xl fas fa-tachometer-alt"></i> Dashboard
+      </div>
+      <div class="icon" (click)="toggleSubmenu('people')">
+        <i class="text-xl fas fa-users"></i> Personas
+      </div>
+      <div class="icon" (click)="toggleSubmenu('reports')">
+        <i class="text-xl fas fa-chart-bar"></i> Informes
+      </div>
+      <button (click)="toggleTheme()">Tema</button>
+    </div>
+  
+    <div
+      class="bg-gray-300 transition-all ease-in-out delay-150 overflow-hidden"
+      [ngClass]="{
+        'translate-x-0 w-64 p-4': showSubmenu,
+        '-translate-x-64 w-0': !showSubmenu
+      }"
+    >
+      <ul>
+        <!-- Contenido de los submenús -->
+        <li><a href="#">Opción 11</a></li>
+        <li><a href="#">Opción 2</a></li>
+        <li><a href="#">Opción 3</a></li>
+      </ul>
+    </div>
+  </div>
+  

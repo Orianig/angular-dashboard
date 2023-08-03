@@ -7,8 +7,10 @@ import { ThemeService } from 'src/app/core/services/theme.service';
   styleUrls: ['./sidebar.component.scss']
 })
 export class SidebarComponent {
-  constructor(private themeService: ThemeService) {}
+  showSubmenu = false;
 
+  constructor(private themeService: ThemeService) {}
+  
   toggleTheme() {
     const currentTheme = this.themeService.theme;
     this.themeService.theme = currentTheme == 'dark' ? 'light' : 'dark'
@@ -18,5 +20,11 @@ export class SidebarComponent {
     // } else {
     //   this.themeService.theme = 'dark'
     // }
+  }
+
+  toggleSubmenu(section: string) {
+    if (section !== 'dashboard') {
+      this.showSubmenu = !this.showSubmenu;
+    }
   }
 }
