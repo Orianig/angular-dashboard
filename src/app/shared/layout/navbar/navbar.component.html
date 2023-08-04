@@ -11,7 +11,7 @@
       <i class="fa-solid fa-bars"></i>
     </button>
     <!-- First part -->
-    <div class="hidden md:flex">
+    <div class="hidden md:flex items-center">
       <!-- items -->
       <div class="ml-10 flex items-baseline space-x-4 mr-6">
         <a
@@ -38,13 +38,13 @@
       <!-- line -->
       <div class="h-full border-l border-gray-300 mr-3"></div>
       <!-- search -->
-      <div class="mb-3">
+      <div class="ml-2">
         <div class="relative">
           <input
             type="search"
             id="exampleSearch"
             placeholder="Type query"
-            class="pl-10 pr-3 py-2 w-64 rounded-lg border border-gray-300 focus:outline-none focus:ring-none"
+            class="pl-10 pr-3 py-2 w-64 rounded-lg border border-gray-300 focus:outline-none focus:ring-none dark: dark:bg-slate-800 dark:border-gray-400 dark:text-gray-100"
           />
           <i
             class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"
@@ -55,14 +55,14 @@
   </div>
   <div class="flex items-center justify-center gap-2 mr-6">
     <!-- second part -->
-    <i class="fa-solid fa-bell text-xl"></i>
+    <i class="fa-solid fa-bell text-xl dark:text-gray-400"></i>
     <!-- Profile dropdown -->
     <div class="relative ml-3">
       <div>
         <button
           type="button"
-          class="relative flex max-w-xs items-center rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
-          id="user-menu-button"
+          class="user-picture-profile"
+          id="relative flex max-w-xs items-center rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
           aria-expanded="false"
           aria-haspopup="true"
         >
@@ -76,7 +76,7 @@
         </button>
       </div>
     </div>
-    <span>MANZANA PEREZ </span>
+    <span class="text-xs lg:text-xl dark:text-gray-400">MANZANA PEREZ </span>
     <app-navbar-user-menu></app-navbar-user-menu>
   </div>
 </div>
