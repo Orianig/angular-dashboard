@@ -1,12 +1,3 @@
-<!--
-	Mobile menu, show/hide based on mobile menu state.
-	Entering: "duration-200 ease-out"
-		From: "opacity-0 scale-95"
-		To: "opacity-100 scale-100"
-	Leaving: "duration-100 ease-in"
-		From: "opacity-100 scale-100"
-		To: "opacity-0 scale-95"
--->
 <div
   [ngClass]="
     isOpen
@@ -16,25 +7,24 @@
   class="absolute inset-x-0 top-0 z-10 origin-top-right transform p-2 transition lg:hidden"
 >
   <div
-    class="divide-y-2 divide-gray-50 rounded-lg bg-white shadow-lg ring-1 ring-black ring-opacity-5 dark:bg-night-700"
+    class="divide-y-2 divide-gray-50 rounded-lg bg-gray-200 border dark:border-gray-300 dark:bg-slate-900 shadow-lg ring-1 ring-black ring-opacity-5 dark:bg-night-700"
   >
     <div class="pt-5 pb-6">
       <div class="flex items-center justify-between px-5">
         <div>
           <!-- Logo -->
           <div
-            class="flex items-center justify-start sm:order-2 md:mr-10 lg:hidden"
+            class="flex items-center justify-start sm:order-2 md:mr-10 lg:hidden mb-2"
           >
-            <a
+            <!-- <a
               class="flex items-center justify-center rounded bg-primary-500 p-2 focus:outline-none focus:ring-1"
             >
-              <i class="fa-solid fa-building"></i>
-            </a>
-            <b class="pl-3 text-sm font-bold dark:text-night-50">
-              Angular Tailwind
-            </b>
+              <i class="fa-solid fa-hourglass text-xs"></i>
+            </a> -->
+            <b class="pl-10 text-xs font-bold dark:text-gray-300"> 4VENUES </b>
           </div>
         </div>
+        <!-- menu items -->
         <div class="-mr-2">
           <button
             (click)="closeMenu()"
@@ -48,9 +38,19 @@
         </div>
       </div>
       <ng-container *ngFor="let menuItems of menuItemsList">
-        <span>{{ menuItems.name }}</span>
-        <!-- Primer bucle para los items.name -->
-        <div *ngFor="let item of menuItems.items">{{ item.name }}</div>
+        <!-- Clase para elementos del primer bucle -->
+        <span
+          class="block text-gray-400 font-bold mb-2 dark:text-gray-300 text-sm pl-12 gap-2"
+        >
+          <i [ngClass]="[menuItems.icon, 'mr-4 dark:text-gray-500']"></i>
+          {{ menuItems.name }}
+        </span>
+        <div
+          *ngFor="let item of menuItems.items"
+          class="text-xs pl-28 font-semibold text-gray-600 dark:text-gray-400 mb-2"
+        >
+          {{ item.name }}
+        </div>
       </ng-container>
     </div>
   </div>
