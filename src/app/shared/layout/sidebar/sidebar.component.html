@@ -6,7 +6,12 @@
       <i
         *ngFor="let items of menuItemsList"
         (click)="toggleSubmenu(items.name)"
-        [ngClass]="items.icon"
+        [ngClass]="[
+          items.icon,
+          items.active || items.name === activeMenu ? 'text-primary-500' : '',
+          'cursor-pointer text-gray-300/50 hover:text-gray-100 transition-all'
+        ]"
+        routerLinkActive="text-primary-500"
       >
       </i>
     </div>
@@ -26,11 +31,23 @@
       '-translate-x-64 w-0': activeMenu === null
     }"
   >
-    <i class="fa-solid fa-chevron-left" (click)="toggleSubmenu(null)"></i>
+    <i
+      class="fa-solid fa-chevron-left cursor-pointer opacity-70 transition-opacity hover:opacity-100"
+      (click)="toggleSubmenu(null)"
+      [ngStyle]="{ opacity: activeMenu === null ? '70' : '100' }"
+    ></i>
     <ul>
       <!-- Contenido de los submenús -->
-      <li *ngFor="let subItems of subMenuItemsList">
-        <a [routerLink]="subItems.route">{{ subItems.name }}</a>
+      <li
+        *ngFor="let subItems of subMenuItemsList"
+        class="cursor-pointer opacity-70 transition-opacity hover:opacity-100"
+      >
+        <a
+          [routerLink]="subItems.route"
+          class="block px-4 py-2 text-sm text-gray-700"
+        >
+          {{ subItems.name }}
+        </a>
       </li>
     </ul>
   </div>

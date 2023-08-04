@@ -23,15 +23,22 @@ export class SidebarComponent {
   }
 
   toggleSubmenu(section: string | null) {
-    if (this.activeMenu === section) {
-      // Si hacemos clic en el mismo menú, cerramos el submenú
+    // Buscamos el menú correspondiente por su nombre
+    const menuItem = this.menuItemsList.find((item) => item.name === section);
+
+    if (
+      this.activeMenu === section ||
+      !menuItem ||
+      !menuItem.items ||
+      menuItem.items.length === 0
+    ) {
+      // Si hacemos clic en el mismo menú, cerramos el submenú, o si el menú no tiene items
       this.activeMenu = null;
       this.subMenuItemsList = [];
     } else {
-      // Si hacemos clic en otro menú, abrimos el submenú correspondiente
+      // Si hacemos clic en otro menú con items, abrimos el submenú correspondiente
       this.activeMenu = section;
-      this.subMenuItemsList =
-        this.menuItemsList.find((item) => item.name === section)?.items || [];
+      this.subMenuItemsList = menuItem.items;
     }
   }
 }

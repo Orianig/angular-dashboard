@@ -2,10 +2,10 @@ import { IMenuItem } from '../models/menu.interface';
 
 export const MENU_LIST: IMenuItem[] = [
   {
-    name: 'Calendario',
-    active: false,
-    route: '/calendario',
-    icon: 'fa-solid fa-calendar',
+    name: 'Dashboard',
+    active: true,
+    route: '/dashboard',
+    icon: 'fa-solid fa-home',
   },
   {
     name: 'Usuario',
