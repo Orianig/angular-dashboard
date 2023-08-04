@@ -12,18 +12,14 @@ export class SidebarComponent {
   public activeMenu: string | null = null;
   public menuItemsList: IMenuItem[] = MENU_LIST;
   public subMenuItemsList: IMenuItem[] = [];
+  public isDarkMode = this.themeService.theme == 'dark' ? true : false;
 
   constructor(private themeService: ThemeService) {}
 
   toggleTheme() {
     const currentTheme = this.themeService.theme;
     this.themeService.theme = currentTheme == 'dark' ? 'light' : 'dark';
-    // Otro camino, yo prefiero usar el operador ternario
-    // if (currentTheme == 'dark') {
-    //   this.themeService.theme = 'light'
-    // } else {
-    //   this.themeService.theme = 'dark'
-    // }
+    this.isDarkMode = this.themeService.theme == 'dark' ? true : false;
   }
 
   toggleSubmenu(section: string | null) {

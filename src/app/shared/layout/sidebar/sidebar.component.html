@@ -1,15 +1,23 @@
 <div class="hidden lg:flex h-full relative">
   <!-- Main menu bar -->
   <div class="flex flex-col gap-4 bg-gray-900 text-white p-4 z-10">
-    <i
-      *ngFor="let items of menuItemsList"
-      (click)="toggleSubmenu(items.name)"
-      [ngClass]="items.icon"
-    >
-    </i>
-    <button (click)="toggleTheme()">Tema</button>
+    <i class="fa-solid fa-bars"></i>
+    <div class="flex flex-col items-center justify-center flex-auto gap-10">
+      <i
+        *ngFor="let items of menuItemsList"
+        (click)="toggleSubmenu(items.name)"
+        [ngClass]="items.icon"
+      >
+      </i>
+    </div>
+    <!-- theme button -->
+    <div class="flex items-center">
+      <button class="focus:outline-none" (click)="toggleTheme()">
+        <i *ngIf="isDarkMode" class="fas fa-moon text-yellow-400 text-2xl"></i>
+        <i *ngIf="!isDarkMode" class="fas fa-sun text-yellow-400 text-2xl"></i>
+      </button>
+    </div>
   </div>
-
   <!-- Sub menu bar -->
   <div
     class="bg-gray-300 transition-all ease-in-out delay-150 overflow-hidden"
