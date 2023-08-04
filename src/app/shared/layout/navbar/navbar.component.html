@@ -1,4 +1,21 @@
-<div class="flex justify-between bg-white dark:bg-slate-800 p-2">
-  <div>a</div>
+<div class="relative flex justify-between bg-white dark:bg-slate-800 p-2">
+  <div class="flex gap-4">
+    <button
+      (click)="openMobileMenu()"
+      type="button"
+      class="lg:hidden inline-flex items-center justify-center rounded-md p-2 text-gray-400 focus:outline-none"
+      aria-expanded="false"
+    >
+      <!-- A11y -->
+      <span class="sr-only">Open menu</span>
+      <i class="fa-solid fa-bars"></i>
+    </button>
+    <span>a</span>
+  </div>
   <div>b</div>
+
+  <app-navbar-mobile-menu
+    [isOpen]="isOpenMobileMenu"
+    (close)="closeMobileMenu()"
+  ></app-navbar-mobile-menu>
 </div>

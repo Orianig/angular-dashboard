@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ThemeService } from 'src/app/core/services/theme.service';
-import { MENU_LIST } from './menu.constant';
 import { IMenuItem } from 'src/app/core/models/menu.interface';
+import { MENU_LIST } from 'src/app/core/constants/menu.constant';
 
 @Component({
   selector: 'app-sidebar',
@@ -9,7 +9,7 @@ import { IMenuItem } from 'src/app/core/models/menu.interface';
   styleUrls: ['./sidebar.component.scss'],
 })
 export class SidebarComponent {
-  showSubmenu = false;
+  public activeMenu: string | null = null;
   public menuItemsList: IMenuItem[] = MENU_LIST;
   public subMenuItemsList: IMenuItem[] = [];
 
@@ -26,13 +26,16 @@ export class SidebarComponent {
     // }
   }
 
-  toggleSubmenu(section: string) {
-    if (section !== 'dashboard') {
-      this.showSubmenu = !this.showSubmenu;
-      // Si se muestra el submenu, actualizamos los elementos activos del submenu
-      this.subMenuItemsList = this.showSubmenu
-        ? this.menuItemsList.find((item) => item.name === section)?.items || []
-        : [];
+  toggleSubmenu(section: string | null) {
+    if (this.activeMenu === section) {
+      // Si hacemos clic en el mismo menú, cerramos el submenú
+      this.activeMenu = null;
+      this.subMenuItemsList = [];
+    } else {
+      // Si hacemos clic en otro menú, abrimos el submenú correspondiente
+      this.activeMenu = section;
+      this.subMenuItemsList =
+        this.menuItemsList.find((item) => item.name === section)?.items || [];
     }
   }
 }

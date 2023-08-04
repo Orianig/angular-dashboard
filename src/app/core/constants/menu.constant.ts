@@ -1,4 +1,4 @@
-import { IMenuItem } from '../../../core/models/menu.interface';
+import { IMenuItem } from '../models/menu.interface';
 
 export const MENU_LIST: IMenuItem[] = [
   {
