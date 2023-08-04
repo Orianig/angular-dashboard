@@ -1,7 +1,9 @@
-<div class="hidden lg:flex h-full relative">
+<div class="hidden lg:flex h-full relative bg-gray-100 dark:bg-slate-900">
   <!-- Main menu bar -->
-  <div class="flex flex-col gap-4 bg-gray-900 text-white p-4 z-10">
-    <i class="fa-solid fa-bars"></i>
+  <div
+    class="flex flex-col gap-4 bg-gray-900 text-white p-4 z-10 border-r dark:border-gray-500"
+  >
+    <i class="fa-solid fa-bars flex justify-center text-lg"></i>
     <div class="flex flex-col items-center justify-center flex-auto gap-10">
       <i
         *ngFor="let items of menuItemsList"
@@ -16,39 +18,56 @@
       </i>
     </div>
     <!-- theme button -->
-    <div class="flex items-center">
+    <div class="flex justify-center">
       <button class="focus:outline-none" (click)="toggleTheme()">
         <i *ngIf="isDarkMode" class="fas fa-moon text-yellow-400 text-2xl"></i>
         <i *ngIf="!isDarkMode" class="fas fa-sun text-yellow-400 text-2xl"></i>
       </button>
     </div>
+    <p class="flex justify-center dark:text-gray-200 text-xs">V-0.0.1</p>
   </div>
   <!-- Sub menu bar -->
   <div
-    class="bg-gray-300 transition-all ease-in-out delay-150 overflow-hidden"
+    class="flex flex-col justify-between border-r dark:border-gray-500 bg-gray-300 transition-all ease-in-out delay-150 overflow-hidden dark:bg-slate-900 relative"
     [ngClass]="{
       'translate-x-0 w-64 p-4': activeMenu !== null,
       '-translate-x-64 w-0': activeMenu === null
     }"
   >
     <i
-      class="fa-solid fa-chevron-left cursor-pointer opacity-70 transition-opacity hover:opacity-100"
+      class="fa-solid fa-chevron-left cursor-pointer opacity-70 hover:opacity-100 dark:text-gray-200 absolute right-4"
       (click)="toggleSubmenu(null)"
       [ngStyle]="{ opacity: activeMenu === null ? '70' : '100' }"
     ></i>
-    <ul>
-      <!-- Contenido de los submenús -->
-      <li
-        *ngFor="let subItems of subMenuItemsList"
-        class="cursor-pointer opacity-70 transition-opacity hover:opacity-100"
+
+    <!-- Nombre del menú -->
+    <section>
+      <h2
+        class="px-4 py-2 text-lg text-gray-700 font-bold dark:text-gray-400"
+        *ngIf="activeMenu"
       >
-        <a
-          [routerLink]="subItems.route"
-          class="block px-4 py-2 text-sm text-gray-700"
+        {{ activeMenu }}
+      </h2>
+      <ul>
+        <!-- Contenido de los submenús -->
+        <li
+          *ngFor="let subItems of subMenuItemsList"
+          class="cursor-pointer transition-all"
         >
-          {{ subItems.name }}
-        </a>
-      </li>
-    </ul>
+          <a
+            [routerLink]="subItems.route"
+            class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 dark:hover:bg-primary-800/20"
+          >
+            {{ subItems.name }}
+          </a>
+        </li>
+      </ul>
+      <hr class="mt-2 border border-gray-500 -ml-4 -mr-4" />
+    </section>
+    <!-- segundo item  -->
+    <span class="flex justify-center text-lg dark:text-gray-500 gap-4">
+      <i class="fa-solid fa-camera"></i>
+      <i class="fa-solid fa-message"></i><i class="fa-solid fa-envelope"></i>
+    </span>
   </div>
 </div>
