@@ -55,7 +55,9 @@
               "src/styles.scss",
               "src/assets/css/tailwind.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/apexcharts/dist/apexcharts.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -119,7 +121,9 @@
               "src/styles.scss",
               "src/assets/css/tailwind.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/apexcharts/dist/apexcharts.min.js"
+            ]
           }
         }
       }
