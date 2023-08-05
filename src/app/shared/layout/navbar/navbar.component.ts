@@ -26,6 +26,11 @@ export class NavbarComponent implements OnDestroy {
     );
   }
 
+  get userFullName() {
+    // optional chainning producía un error extranio en el template
+    return `${this.user?.name?.first}  ${this.user?.name?.last}`;
+  }
+
   ngOnDestroy(): void {
     this.clearInterval();
     // Cancelar la suscripción al observable para evitar problemas de suscripción múltiple
@@ -46,7 +51,6 @@ export class NavbarComponent implements OnDestroy {
     this.userSubscription = this.userService
       .getRandomUser()
       .subscribe((user) => {
-        console.log(user);
         this.user = user;
       });
   }

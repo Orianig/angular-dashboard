@@ -178,7 +178,7 @@
     >
       <!-- Bar chart card -->
       <div
-        class="col-span-2 bg-white rounded-md dark:bg-slate-800"
+        class="col-span-2 bg-white rounded-md dark:bg-slate-800 overflow-hidden"
         x-data="{ isOn: false }"
       >
         <!-- Card header -->
@@ -202,9 +202,7 @@
           </div>
         </div>
         <!-- Chart -->
-        <div class="relative p-4 h-72">
-          <canvas id="barChart"></canvas>
-        </div>
+        <div app-bar-chart class="w-full"></div>
       </div>
 
       <!-- Doughnut chart card -->
