@@ -8,6 +8,7 @@ import {
   ApexTitleSubtitle,
   ApexStroke,
   ApexGrid,
+  ApexResponsive,
 } from 'ng-apexcharts';
 
 export type ChartOptions = {
@@ -18,6 +19,7 @@ export type ChartOptions = {
   grid: ApexGrid;
   stroke: ApexStroke;
   title: ApexTitleSubtitle;
+  responsive: ApexResponsive[];
 };
 
 @Component({
@@ -35,6 +37,7 @@ export class LineChartComponent {
     ],
     chart: {
       height: 250,
+      width: '60%',
       type: 'line',
       zoom: {
         enabled: false,
@@ -69,6 +72,19 @@ export class LineChartComponent {
         'Sep',
       ],
     },
+    responsive: [
+      {
+        breakpoint: 380,
+        options: {
+          chart: {
+            width: '85%',
+          },
+          legend: {
+            position: 'bottom',
+          },
+        },
+      },
+    ],
   };
 
   constructor() {}
