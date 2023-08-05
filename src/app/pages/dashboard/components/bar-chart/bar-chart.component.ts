@@ -60,6 +60,9 @@ export class BarChartComponent {
             // console.log(chart, w, e)
           },
         },
+        toolbar: {
+          show: false,
+        },
       },
       colors: [
         '#008FFB',

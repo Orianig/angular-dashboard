@@ -42,6 +42,9 @@ export class LineChartComponent {
       zoom: {
         enabled: false,
       },
+      toolbar: {
+        show: false,
+      },
     },
     dataLabels: {
       enabled: false,
