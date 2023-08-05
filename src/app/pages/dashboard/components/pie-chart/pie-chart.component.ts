@@ -24,7 +24,7 @@ export class PieChartComponent {
     series: [44, 55, 13, 43, 22],
     chart: {
       type: 'donut',
-      width: 350,
+      width: 380,
     },
     labels: ['Team A', 'Team B', 'Team C', 'Team D', 'Team E'],
     responsive: [
@@ -33,6 +33,17 @@ export class PieChartComponent {
         options: {
           chart: {
             width: 200,
+          },
+          legend: {
+            position: 'bottom',
+          },
+        },
+      },
+      {
+        breakpoint: 380,
+        options: {
+          chart: {
+            width: '100%',
           },
           legend: {
             position: 'bottom',
