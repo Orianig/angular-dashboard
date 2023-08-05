@@ -4,9 +4,10 @@ import { NgApexchartsModule } from 'ng-apexcharts';
 import { DashboardComponent } from './dashboard.component';
 import { BarChartComponent } from './components/bar-chart/bar-chart.component';
 import { PieChartComponent } from './components/pie-chart/pie-chart.component';
+import { LineChartComponent } from './components/line-chart/line-chart.component';
 
 @NgModule({
-  declarations: [DashboardComponent, BarChartComponent, PieChartComponent],
+  declarations: [DashboardComponent, BarChartComponent, PieChartComponent, LineChartComponent],
   imports: [CommonModule, NgApexchartsModule],
 })
 export class DashboardModule {}

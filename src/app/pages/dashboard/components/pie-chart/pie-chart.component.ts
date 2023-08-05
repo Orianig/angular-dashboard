@@ -24,7 +24,7 @@ export class PieChartComponent {
     series: [44, 55, 13, 43, 22],
     chart: {
       type: 'donut',
-      width: 380,
+      width: 350,
     },
     labels: ['Team A', 'Team B', 'Team C', 'Team D', 'Team E'],
     responsive: [

@@ -266,8 +266,7 @@
 
       <!-- Line chart card -->
       <div
-        class="col-span-2 bg-white rounded-md dark:bg-slate-800"
-        x-data="{ isOn: false }"
+        class="col-span-2 bg-white rounded-md dark:bg-slate-800 overflow-hidden"
       >
         <!-- Card header -->
         <div
@@ -290,7 +289,7 @@
         </div>
         <!-- Chart -->
         <div class="relative p-4 h-72">
-          <canvas id="lineChart"></canvas>
+          <div app-line-chart></div>
         </div>
       </div>
     </div>
