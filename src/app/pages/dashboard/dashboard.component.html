@@ -1,1 +1,316 @@
-<p>dashboard works!</p>
+<!-- Main content -->
+<main>
+  <!-- Content header -->
+  <div
+    class="flex items-center justify-between px-4 py-4 border-b dark:border-slate-700 dark:bg-slate-700:py-6 dark:border-slate-700"
+  >
+    <h1 class="text-2xl font-semibold text-grey-200 dark:text-gray-300">
+      Dashboard
+    </h1>
+    <a
+      class="text-gray-800 dark:text-gray-400 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 font-semibold dark:hover:bg-primary-800/20"
+      href="https://github.com/Orianig/angular-dashboard"
+      target="_blank"
+    >
+      View on github
+    </a>
+  </div>
+
+  <!-- Content -->
+  <div class="mt-2">
+    <!-- State cards -->
+    <div class="grid grid-cols-1 gap-8 p-4 lg:grid-cols-2 xl:grid-cols-4">
+      <!-- Value card -->
+      <div
+        class="flex items-center justify-between p-4 bg-white rounded-md dark:bg-slate-800"
+      >
+        <div>
+          <h6
+            class="text-xs font-medium leading-none tracking-wider text-gray-500 uppercase dark:text-primary-light"
+          >
+            Value
+          </h6>
+          <span class="text-xl font-semibold text-gray-600 dark:text-gray-300"
+            >€ 30,000</span
+          >
+          <span
+            class="inline-block px-2 py-px ml-2 text-xs text-primary-800 bg-primary-300 rounded-md"
+          >
+            +4.4%
+          </span>
+        </div>
+        <div>
+          <span>
+            <svg
+              class="w-12 h-12 text-gray-300 dark:text-slate-700"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+
+      <!-- Users card -->
+      <div
+        class="flex items-center justify-between p-4 bg-white rounded-md dark:bg-slate-800"
+      >
+        <div>
+          <h6
+            class="text-xs font-medium leading-none tracking-wider text-gray-500 uppercase dark:text-primary-light"
+          >
+            Users
+          </h6>
+          <span class="text-xl font-semibold text-gray-600 dark:text-gray-300"
+            >€ 50,021</span
+          >
+          <span
+            class="inline-block px-2 py-px ml-2 text-xs text-primary-800 bg-primary-300 rounded-md"
+          >
+            +2.6%
+          </span>
+        </div>
+        <div>
+          <span>
+            <svg
+              class="w-12 h-12 text-gray-300 dark:text-slate-700"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+
+      <!-- Orders card -->
+      <div
+        class="flex items-center justify-between p-4 bg-white rounded-md dark:bg-slate-800"
+      >
+        <div>
+          <h6
+            class="text-xs font-medium leading-none tracking-wider text-gray-500 uppercase dark:text-primary-light"
+          >
+            Orders
+          </h6>
+          <span class="text-xl font-semibold text-gray-600 dark:text-gray-300"
+            >€ 45,00</span
+          >
+          <span
+            class="inline-block px-2 py-px ml-2 text-xs text-primary-800 bg-primary-300 rounded-md"
+          >
+            +3.1%
+          </span>
+        </div>
+        <div>
+          <span>
+            <svg
+              class="w-12 h-12 text-gray-300 dark:text-slate-700"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+
+      <!-- Tickets card -->
+      <div
+        class="flex items-center justify-between p-4 bg-white rounded-md dark:bg-slate-800"
+      >
+        <div>
+          <h6
+            class="text-xs font-medium leading-none tracking-wider text-gray-500 uppercase dark:text-primary-light"
+          >
+            Tickets
+          </h6>
+          <span class="text-xl font-semibold text-gray-600 dark:text-gray-300"
+            >€ 20,50</span
+          >
+          <span
+            class="inline-block px-2 py-px ml-2 text-xs text-primary-800 bg-primary-300 rounded-md"
+          >
+            +3.1%
+          </span>
+        </div>
+        <div>
+          <span>
+            <svg
+              class="w-12 h-12 text-gray-300 dark:text-slate-700"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Charts -->
+    <div
+      class="grid grid-cols-1 p-4 space-y-8 lg:gap-8 lg:space-y-0 lg:grid-cols-3"
+    >
+      <!-- Bar chart card -->
+      <div
+        class="col-span-2 bg-white rounded-md dark:bg-slate-800"
+        x-data="{ isOn: false }"
+      >
+        <!-- Card header -->
+        <div
+          class="flex items-center justify-between p-4 border-b dark:border-slate-700"
+        >
+          <h4 class="text-lg font-semibold text-gray-500 dark:text-light">
+            Bar Chart
+          </h4>
+          <div class="flex items-center space-x-2">
+            <span class="text-sm text-gray-500 dark:text-light">Last year</span>
+            <button class="relative focus:outline-none">
+              <div
+                class="w-12 h-6 transition rounded-full outline-none bg-primary-100 dark:bg-slate-700"
+              ></div>
+              <div
+                class="absolute top-0 left-0 inline-flex items-center justify-center w-6 h-6 transition-all duration-200 ease-in-out transform scale-110 rounded-full shadow-sm"
+                :class="{ 'translate-x-0  bg-white dark:bg-primary-100': !isOn, 'translate-x-6 bg-primary-light dark:bg-primary': isOn }"
+              ></div>
+            </button>
+          </div>
+        </div>
+        <!-- Chart -->
+        <div class="relative p-4 h-72">
+          <canvas id="barChart"></canvas>
+        </div>
+      </div>
+
+      <!-- Doughnut chart card -->
+      <div
+        class="bg-white rounded-md dark:bg-slate-800"
+        x-data="{ isOn: false }"
+      >
+        <!-- Card header -->
+        <div
+          class="flex items-center justify-between p-4 border-b dark:border-slate-700"
+        >
+          <h4 class="text-lg font-semibold text-gray-500 dark:text-light">
+            Doughnut Chart
+          </h4>
+          <div class="flex items-center">
+            <button class="relative focus:outline-none">
+              <div
+                class="w-12 h-6 transition rounded-full outline-none bg-primary-100 dark:bg-slate-700"
+              ></div>
+              <div
+                class="absolute top-0 left-0 inline-flex items-center justify-center w-6 h-6 transition-all duration-200 ease-in-out transform scale-110 rounded-full shadow-sm"
+                :class="{ 'translate-x-0  bg-white dark:bg-primary-100': !isOn, 'translate-x-6 bg-primary-light dark:bg-primary': isOn }"
+              ></div>
+            </button>
+          </div>
+        </div>
+        <!-- Chart -->
+        <div class="relative p-4 h-72">
+          <canvas id="doughnutChart"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <!-- Two grid columns -->
+    <div
+      class="grid grid-cols-1 p-4 space-y-8 lg:gap-8 lg:space-y-0 lg:grid-cols-3"
+    >
+      <!-- Active users chart -->
+      <div class="col-span-1 bg-white rounded-md dark:bg-slate-800">
+        <!-- Card header -->
+        <div class="p-4 border-b dark:border-slate-700">
+          <h4 class="text-lg font-semibold text-gray-500 dark:text-light">
+            Active users right now
+          </h4>
+        </div>
+        <p class="p-4">
+          <span
+            class="text-2xl font-medium text-gray-500 dark:text-light"
+            id="usersCount"
+            >0</span
+          >
+          <span class="text-sm font-medium text-gray-500 dark:text-primary"
+            >Users</span
+          >
+        </p>
+        <!-- Chart -->
+        <div class="relative p-4">
+          <canvas id="activeUsersChart"></canvas>
+        </div>
+      </div>
+
+      <!-- Line chart card -->
+      <div
+        class="col-span-2 bg-white rounded-md dark:bg-slate-800"
+        x-data="{ isOn: false }"
+      >
+        <!-- Card header -->
+        <div
+          class="flex items-center justify-between p-4 border-b dark:border-slate-700"
+        >
+          <h4 class="text-lg font-semibold text-gray-500 dark:text-light">
+            Line Chart
+          </h4>
+          <div class="flex items-center">
+            <button class="relative focus:outline-none">
+              <div
+                class="w-12 h-6 transition rounded-full outline-none bg-primary-100 dark:bg-slate-700"
+              ></div>
+              <div
+                class="absolute top-0 left-0 inline-flex items-center justify-center w-6 h-6 transition-all duration-200 ease-in-out transform scale-110 rounded-full shadow-sm"
+                :class="{ 'translate-x-0  bg-white dark:bg-primary-100': !isOn, 'translate-x-6 bg-primary-light dark:bg-primary': isOn }"
+              ></div>
+            </button>
+          </div>
+        </div>
+        <!-- Chart -->
+        <div class="relative p-4 h-72">
+          <canvas id="lineChart"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- Main footer -->
+<footer
+  class="flex items-center justify-between p-4 bg-white text-grey-300 dark:text-gray-300 border-t dark:bg-slate-700 dark:border-slate-600"
+>
+  <div>Agosto || 2023</div>
+  <div>
+    Made by
+    <a
+      href="https://github.com/Orianig"
+      target="_blank"
+      class="text-grey-300 dark:text-gray-300 hover:underline"
+      >Oriana Infante</a
+    >
+  </div>
+</footer>
