@@ -16,22 +16,22 @@
       <div class="ml-10 flex items-baseline space-x-4 mr-6">
         <a
           href="#"
-          class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium dark:hover:bg-primary-800/20"
+          class="text-gray-400 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-base font-normal dark:hover:bg-primary-800/20"
           >Team</a
         >
         <a
           href="#"
-          class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium dark:hover:bg-primary-800/20"
+          class="text-gray-400 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-base font-normal dark:hover:bg-primary-800/20"
           >Projects</a
         >
         <a
           href="#"
-          class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium dark:hover:bg-primary-800/20"
+          class="text-gray-400 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-base font-normal dark:hover:bg-primary-800/20"
           >Calendar</a
         >
         <a
           href="#"
-          class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium dark:hover:bg-primary-800/20"
+          class="text-gray-400 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-base font-normal dark:hover:bg-primary-800/20"
           >Reports</a
         >
       </div>
@@ -55,29 +55,27 @@
   </div>
   <div class="flex items-center justify-center gap-2 mr-6">
     <!-- second part -->
-    <i class="fa-solid fa-bell text-xl dark:text-gray-400"></i>
+    <i class="fa-solid fa-bell text-xl dark:text-gray-400 block mr-4"></i>
     <!-- Profile dropdown -->
-    <div *ngIf="user" class="relative ml-3">
-      <div>
-        <button
-          type="button"
-          class="user-picture-profile"
-          id="relative flex max-w-xs items-center rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
-          aria-expanded="false"
-          aria-haspopup="true"
-          (click)="getUser()"
-        >
-          <span class="absolute -inset-1.5"></span>
-          <span class="sr-only">Open user menu</span>
-          <img
-            class="h-8 w-8 rounded-full"
-            [src]="user?.picture?.thumbnail"
-            alt=""
-          />
-        </button>
-      </div>
-    </div>
-    <div *ngIf="user" class="text-xs lg:text-xl dark:text-gray-400">
+    <button
+      type="button"
+      class="user-picture-profile"
+      id="flex max-w-xs items-center rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+      aria-expanded="false"
+      aria-haspopup="true"
+      (click)="getUser()"
+    >
+      <span class="sr-only">Open user menu</span>
+      <img
+        class="h-8 w-8 rounded-full"
+        [src]="user?.picture?.thumbnail"
+        alt=""
+      />
+    </button>
+    <div
+      *ngIf="user"
+      class="text-xs lg:text-xl dark:text-gray-400 w-auto min-w-[150px]"
+    >
       <p>{{ user.name.first }} {{ user.name.last }}</p>
     </div>
 
