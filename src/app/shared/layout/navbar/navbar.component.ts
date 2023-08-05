@@ -1,7 +1,7 @@
 import { Component, OnDestroy } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { UsersService } from 'src/app/core/services/users.service';
 import { IUser } from '../../../core/models/user.interface';
-import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-navbar',
@@ -12,18 +12,12 @@ export class NavbarComponent implements OnDestroy {
   user: IUser | undefined;
   isOpenMobileMenu = false;
   private userSubscription: Subscription | undefined;
-  private intervalId: number | undefined;
+  private interval: any;
 
   constructor(private userService: UsersService) {
     this.user = {} as IUser;
-    this.getUser(); // Recuperar un usuario al inicio
-
-    // Establecer el intervalo de 10 segundos para recuperar un nuevo usuario aleatorio
-    this.intervalId = Number(
-      setInterval(() => {
-        this.getUser();
-      }, 10000)
-    );
+    this.getUser(); // Llamada a getUser() al comenzar para obtener el primer usuario
+    this.resetInterval();
   }
 
   get userFullName() {
@@ -56,27 +50,21 @@ export class NavbarComponent implements OnDestroy {
   }
 
   public onPhotoClick() {
-    this.getUser(); // Recuperar un nuevo usuario aleatorio al hacer clic en la foto
+    this.getUser();
     this.resetInterval();
   }
 
   private resetInterval() {
-    if (this.intervalId) {
-      clearInterval(this.intervalId);
-    }
+    this.clearInterval();
     // Establecer el intervalo de 10 segundos nuevamente
-    this.intervalId = Number(
-      setInterval(() => {
-        this.getUser();
-      }, 10000)
-    );
+    this.interval = setInterval(() => {
+      this.getUser();
+      console.log('new request time:', new Date());
+    }, 10000);
   }
 
   private clearInterval() {
-    // Limpiar el intervalo cuando sea necesario
-    if (this.intervalId) {
-      clearInterval(this.intervalId);
-      this.intervalId = undefined;
-    }
+    clearInterval(this.interval);
+    this.interval = undefined;
   }
 }
