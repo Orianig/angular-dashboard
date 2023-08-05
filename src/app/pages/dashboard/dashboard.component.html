@@ -252,15 +252,14 @@
           <span
             class="text-2xl font-medium text-gray-500 dark:text-light"
             id="usersCount"
-            >0</span
-          >
+          ></span>
           <span class="text-sm font-medium text-gray-500 dark:text-primary"
             >Users</span
           >
         </p>
         <!-- Chart -->
-        <div class="relative p-4">
-          <canvas id="activeUsersChart"></canvas>
+        <div class="relative p-2">
+          <div app-users-cards></div>
         </div>
       </div>
 
@@ -288,7 +287,7 @@
           </div>
         </div>
         <!-- Chart -->
-        <div class="relative p-4 h-72 dark:text-gray-300">
+        <div class="relative p-4 h-72 items-center">
           <div app-line-chart></div>
         </div>
       </div>

@@ -75,6 +75,7 @@ export class LineChartComponent {
         'Sep',
       ],
     },
+
     responsive: [
       {
         breakpoint: 380,
