@@ -202,12 +202,12 @@
           </div>
         </div>
         <!-- Chart -->
-        <div app-bar-chart class="w-full"></div>
+        <div app-bar-chart></div>
       </div>
 
       <!-- Doughnut chart card -->
       <div
-        class="bg-white rounded-md dark:bg-slate-800"
+        class="bg-white rounded-md dark:bg-slate-800 overflow-hidden"
         x-data="{ isOn: false }"
       >
         <!-- Card header -->
@@ -215,7 +215,7 @@
           class="flex items-center justify-between p-4 border-b dark:border-slate-700"
         >
           <h4 class="text-lg font-semibold text-gray-500 dark:text-light">
-            Doughnut Chart
+            Pie Chart
           </h4>
           <div class="flex items-center">
             <button class="relative focus:outline-none">
@@ -231,7 +231,7 @@
         </div>
         <!-- Chart -->
         <div class="relative p-4 h-72">
-          <canvas id="doughnutChart"></canvas>
+          <div app-pie-chart></div>
         </div>
       </div>
     </div>

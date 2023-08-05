@@ -51,6 +51,7 @@ export class BarChartComponent {
       ],
       chart: {
         height: 250,
+        width: '100%',
         type: 'bar',
         events: {
           click: function (chart, w, e) {
