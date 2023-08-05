@@ -8,6 +8,7 @@ import {
   ApexYAxis,
   ApexLegend,
   ApexGrid,
+  ApexResponsive,
 } from 'ng-apexcharts';
 
 type ApexXAxis = {
@@ -31,6 +32,7 @@ export type ChartOptions = {
   grid: ApexGrid;
   colors: string[];
   legend: ApexLegend;
+  responsive: ApexResponsive[];
 };
 
 @Component({
@@ -51,7 +53,7 @@ export class BarChartComponent {
       ],
       chart: {
         height: 250,
-        width: '100%',
+        width: '60%',
         type: 'bar',
         events: {
           click: function (chart, w, e) {
@@ -99,6 +101,19 @@ export class BarChartComponent {
           },
         },
       },
+      responsive: [
+        {
+          breakpoint: 380,
+          options: {
+            chart: {
+              width: '80%',
+            },
+            legend: {
+              position: 'bottom',
+            },
+          },
+        },
+      ],
     };
   }
 }
